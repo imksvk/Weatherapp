@@ -1,12 +1,44 @@
-# React + Vite
+# Weather Dashboard Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack Used
+- React.js
+- CSS (External Stylesheet)
+- OpenWeatherMap API
+- React Hooks
 
-Currently, two official plugins are available:
+## Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Clone the Repository
+```sh
+git clone <repository-url>
+cd weather-dashboard
+```
 
-## Expanding the ESLint configuration
+### 2. Install Dependencies
+```sh
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. Get OpenWeatherMap API Key
+- Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate an API key.
+- Create a `.env` file in the root of the project and add:
+```env
+REACT_APP_WEATHER_API_KEY=your_api_key_here
+```
+
+### 4. Start the Development Server
+```sh
+npm start
+```
+
+## API Integration Details
+
+- **API Used**: OpenWeatherMap API ([Docs](https://openweathermap.org/api))
+- **Endpoints**:
+  - `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}` (Current Weather)
+  - `https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}` (5-day Forecast)
+- **Response Format**: JSON
+- **Rate Limits**:
+  - Free tier: 60 requests per minute
+  - Higher limits available with paid plans
+
